@@ -11,6 +11,7 @@ body {
     background-color: cadetblue;
     color: white;
     position: fixed;
+    width: auto;
 }
 
 .nav ul{
