@@ -40,6 +40,7 @@ function convert(){
         feedbackElement.innerHTML = "You guessed right! It took you " + guesses + " guess(s) to get the number. Give it another try!";
         feedbackElement.style.color = "green";
         number = Math.floor(Math.random() * 100) + 1;
+        guesses = 1;
       } else if (guess < number) {
         feedbackElement.innerHTML = "Too low! Try again.";
         feedbackElement.style.color = "red";
