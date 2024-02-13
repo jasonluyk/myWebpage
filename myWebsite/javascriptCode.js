@@ -22,3 +22,32 @@ function convert(){
       }
     document.getElementById("resultElement").innerHTML = result;
     }
+
+    function random() {
+      const randomNumber = Math.floor(Math.random() * 100) + 1;
+      return randomNumber;
+    }
+    
+    let number = random();
+    let guesses = 1;
+    
+    function checkGuess() {
+      const inputElement = document.getElementById("guess");
+      const feedbackElement = document.getElementById("feedback");
+      let guess = inputElement.value;
+      
+      if (guess == number) {
+        feedbackElement.innerHTML = "You guessed right! It took you " + guesses + " guess(s) to get the number. Give it another try!";
+        feedbackElement.style.color = "green";
+        number = Math.floor(Math.random() * 100) + 1;
+      } else if (guess < number) {
+        feedbackElement.innerHTML = "Too low! Try again.";
+        feedbackElement.style.color = "red";
+        guesses += 1;
+      } else {
+        feedbackElement.innerHTML = "Too high! Try again.";
+        feedbackElement.style.color = "red";
+        guesses += 1;
+      }
+      console.log(number);
+    }
