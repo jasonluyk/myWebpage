@@ -24,11 +24,12 @@
             
                 <div class="simple">
                     Simple Programs:<br>
-                    <select id="test" name="formSelect" onchange="showDiv('hiddenDiv', 'hiddenDiv2', 'hiddenDiv3', this)">
+                    <select id="test" name="formSelect" onchange="showDiv('hiddenDiv', 'hiddenDiv2', 'hiddenDiv3', 'hiddenDiv4', this)">
                         <option value="0">Nothing Selected</option>
                         <option value="1">Guess a Number</option>
                         <option value="2">Conversion Tool</option>
                         <option value="3">Makeshift Slot Machine</option>
+                        <option value="4">Rock, Paper, Scissors</option>
                     </select><br>
                 
             
@@ -57,27 +58,36 @@
                     </div>
                     <div id = "hiddenDiv3">    
                         <div class="container">
-                            <h1>1-10</h1>
-                            <button type="button" id="spin-button" class="button" onClick="randomClickX()">SPIN</button>
-                            <div class="slot-container">
-                                <div id="slot1" class="slot">
-                                    <p> <!-- Your random number: --> <a id="randomX1">0</a></p>
-                                </div>
-                                <div id="slot2" class="slot">
-                                    <p> <!-- Your random number: --> <a id="randomX2">0</a></p>
-                                </div>
-                                <div id="slot3" class="slot">
-                                    <p> <!-- Your random number: --> <a id="randomX3">0</a></p>
-                                </div>
-                                <div class="answer" id="spanId">Test #1<a id="spanId"> </div>
+                            <div id="slotMachine">
+                                <div class="slot" id="slot1">❓</div>
+                                <div class="slot" id="slot2">❓</div>
+                                <div class="slot" id="slot3">❓</div>
+                                
                             </div>
+                            <div id="buttons">
+                            <button id="startButton">Spin</button>
+                            <button id="resetButton">Reset</button>
+                            <p id="scoreDisplay"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hiddenDiv4">
+                        <div class="container">
+                            <h3>Select an image to play!</h3>
+                            <div>
+                                <img src="images/rock.png" alt="Rock" id="rock">
+                                <img src="images/paper.png" alt="Paper" id="paper">
+                                <img src="images/scissors.png" alt="Scissors" id="scissors">
+                            </div>
+                            <p id="result"></p>
+                            <button class="cheatCode" id="cheat" onclick="cheatCode()">Cheat</button>
                         </div>
                     </div>
                 </div>
                 <div class="comments"> 
                     <h3>Feedback Section</h3>
                     <div id="commentSection">
-                        <div class="comment"><!--<span class="avatar"></span>--><span class="text"></span></div>
+                        <div class="comment"><span class="text"></span></div>
                     </div>
     
                     <h5>What do you think of the site?</h5>

@@ -1,22 +1,5 @@
-.container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 320px;
-  max-width: 90%;
-  display:flex;
-  
-}
 
-
-
-@media screen and (min-width: 700px) {
-
-
-
-  #rockPaperScissors {
+#slotMachine {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,5 +40,4 @@ button {
 
 button:hover {
     background-color: #0056b3; /* Button background color on hover */
-}
 }
