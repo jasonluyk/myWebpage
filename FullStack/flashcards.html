@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="moreStyle.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div><img src="Images/apple.png"></div>
+                <div class="card-title">Apple</div>
+                <button class="card-button">Show</button>
+                <div class="card-answer">Manzana</div>
+            </div>
+            <div class="card">
+                <div><img src="Images/dog.png"></div>
+                <div class="card-title">Dog</div>
+                <button class="card-button">Show</button>
+                <div class="card-answer">Perro</div>
+            </div>
+            <div class="card">
+                <div><img src="Images/city.png"></div>
+                <div class="card-title">City</div>
+                <button class="card-button">Show</button>
+                <div class="card-answer">Ciudad</div>
+            </div>
+            <div class="card">
+                <div><img src="Images/chair.png"></div>
+                <div class="card-title">Chair</div>
+                <button class="card-button">Show</button>
+                <div class="card-answer">Silla</div>
+            </div>
+        </div>
+        <h1>Find Your Local Adventure</h1>
+        <div class='search-container'><input id='search-bar' type='text'></input></div>
+        <div class='adventures-container'>
+            <div class='adventure'>Mountain Bike Tour</div>
+            <div class='adventure'>Hinterlands Tour</div>
+            <div class='adventure'>Sky Diving</div>
+            <div class='adventure'>Local Food Festival</div>
+            <div class='adventure'>Sunday Markets Tour</div>
+            <div class='adventure'>Food Tasting Tour</div>
+            <div class='adventure'>Snorkelling Tour</div>
+            <div class='adventure'>Forest Experience</div>
+        </div>
+        <div class="form-container">
+            <form id="saveForm">
+                Name: <br><input class="textInput" type="text"><br>
+                Address: <br><input class="textInput" type="text"><br>
+                Age: <br><input class="textInput" type="text"><br>
+                Pets: <br><input id="petCheckbox" type="checkbox"><br>
+                <div id="petSelection">
+                Pet: <br><select>
+                    <option value=""></option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Other">Other</option>
+                </select><br>
+                </div>
+                <br><input id="saveButton" type="submit" value="Save">
+            </form>
+        </div>
+        <script src="moreScripts.js"></script>
+        <script src="moreJS.js"></script>
+    </body>
+</html>

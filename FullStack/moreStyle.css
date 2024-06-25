@@ -1,0 +1,104 @@
+body {
+    background: #5F9FFF;
+    padding: 40px;
+    font-family: Courier;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.card {
+    flex: none;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+}
+
+.card-title, .card-answer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-button {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #0070bb;
+    background: white;
+    color: #0070bb;
+}
+
+.card-answer {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-around;
+}
+#search-bar {
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+}
+
+.adventures-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+.adventure {
+    width: 120px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+
+}
+
+.form-container {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    border: thick solid #9900ff;
+    background-color: #00ffaa;
+}
+
+.textInput {
+    margin-bottom: 10px;
+    width: 100%;    
+}
+
+#petSelection {
+    margin-top: 10px;
+    display: none;
+}
+
+#saveButton {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #9900ff;
+    color: white;
+}
+
+

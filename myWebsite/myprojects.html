@@ -24,12 +24,13 @@
             
                 <div class="simple">
                     Simple Programs:<br>
-                    <select id="test" name="formSelect" onchange="showDiv('hiddenDiv', 'hiddenDiv2', 'hiddenDiv3', 'hiddenDiv4', this)">
+                    <select id="test" name="formSelect" onchange="showDiv('hiddenDiv', 'hiddenDiv2', 'hiddenDiv3', 'hiddenDiv4', 'hiddenDiv5', this)">
                         <option value="0">Nothing Selected</option>
                         <option value="1">Guess a Number</option>
                         <option value="2">Conversion Tool</option>
                         <option value="3">Makeshift Slot Machine</option>
                         <option value="4">Rock, Paper, Scissors</option>
+                        <option value="5">Crossy RPG</option>
                     </select><br>
                 
             
@@ -83,6 +84,12 @@
                             <button class="cheatCode" id="cheat" onclick="cheatCode()">Cheat</button>
                         </div>
                     </div>
+                    <div id="hiddenDiv5">
+                        <div class="container">
+                            <div id="phaserGame"></div>
+                            <button id="startGame" onclick="CrossyRPG()">Start Game</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="comments"> 
                     <h3>Feedback Section</h3>
@@ -107,7 +114,8 @@
         </div>
         
 
-     
+        <script src="phaser.js"></script>
         <script src="javascriptCode.js"> </script>
+        
     </body>
 </html>
