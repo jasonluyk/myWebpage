@@ -295,8 +295,8 @@ document.getElementById('scissors').addEventListener('click', () => play('scisso
       // player speed
       this.playerSpeed = 3;
       // enemy speed
-      this.enemyMinSpeed = 2;
-      this.enemyMaxSpeed = 4.5;
+      this.enemyMinSpeed = 1;
+      this.enemyMaxSpeed = 3;
       // boundaries
       this.enemyMinY = 80;
       this.enemyMaxY = 280;
