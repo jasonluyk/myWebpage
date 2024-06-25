@@ -282,12 +282,16 @@ document.getElementById('scissors').addEventListener('click', () => play('scisso
   startButton.addEventListener('click', startSpinning);
   resetButton.addEventListener('click', resetSlotMachine);
 
-  //Crossy RPG
-
-  function CrossyRPG() {
+function startRestart(){
     //Hide start button
     let hideStart = document.getElementById('startGame');
     hideStart.style.display = 'none';
+
+}
+
+  //Crossy RPG
+  function CrossyRPG() {
+
     // create a new scene
     let gameScene = new Phaser.Scene('Game');
     // initiate scene parameters
@@ -313,6 +317,7 @@ document.getElementById('scissors').addEventListener('click', () => play('scisso
     };
     // called once after the preload ends
     gameScene.create = function() {
+
       // create bg sprite
       let bg = this.add.sprite(0, 0, 'background');
       // change the origin to the top-left corner
@@ -327,7 +332,7 @@ document.getElementById('scissors').addEventListener('click', () => play('scisso
       // enemy group
       this.enemies = this.add.group({
         key: 'enemy',
-        repeat: 5,
+        repeat: Math.floor(Math.random() * 5) + 1,
         setXY: {
           x: 90,
           y: 100,
@@ -349,18 +354,23 @@ document.getElementById('scissors').addEventListener('click', () => play('scisso
     };
     // this is called up to 60 times per second
     gameScene.update = function(){
+      //implementing keyboard function
+      cursors = this.input.keyboard.createCursorKeys();
       // don't execute if we are terminating
       if(this.isTerminating) return;
       // check for active input (left click / touch)
-      if(this.input.activePointer.isDown) {
+      if(cursors.right.isDown) {
         // player walks
         this.player.x += this.playerSpeed;
+      } else if (cursors.left.isDown){
+        this.player.x -= this.playerSpeed;
       }
+      
       // treasure overlap check
       let playerRect = this.player.getBounds();
       let treasureRect = this.goal.getBounds();
       if(Phaser.Geom.Intersects.RectangleToRectangle(playerRect, treasureRect)) {
-        console.log('reached goal!');
+        let winner = document.getElementById('gameResult').innerHTML = 'You Win, Try Again!';
         // end game
         return this.gameOver();
       }
@@ -380,7 +390,7 @@ document.getElementById('scissors').addEventListener('click', () => play('scisso
         // check enemy overlap
         let enemyRect = enemies[i].getBounds();
         if(Phaser.Geom.Intersects.RectangleToRectangle(playerRect, enemyRect)) {
-          console.log('Game over!');
+          let lostGame = document.getElementById('gameResult').innerHTML = 'Game over, Try Again!';
           // end game
           return this.gameOver();
         }
