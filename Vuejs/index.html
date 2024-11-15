@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog Project</title>
+        <script src="cardcollector.js" type="application/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        
+        <style type="text/css">
+            html, body{
+                padding: 10px;
+                clear: both;
+                float: left;
+                
+            }
+            #cards {
+                
+            }
+            #singleBlogPost {
+                padding: 10px;
+                margin-bottom: 50px;
+                border-width: 2px;
+                border-style: solid;
+                border-color: blue;
+
+            }
+
+            #blogPostCreation {
+                border-width: 2px;
+                border-style: solid;
+                border-color: black;
+            }
+
+            #blogPostCreation > * {
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body onload="loadCards()">
+        <h1>Welcome to my Blog Site!</h1>
+        <div id="blogPosts">
+            
+            <blog-post
+                v-for='post in posts'
+                v-bind:blogpost='post'>
+            </blog-post>
+
+        </div>
+
+        <div id="blogPostCreation">
+            <h2>Make a new blog post</h2>
+            <input v-model="title"><br>
+            <input v-model="username"><br>
+            <input v-model="date"><br>
+            <input v-model="content"><br>
+            <button v-on:click="publishPost">Publish Post</button>
+        </div>
+       <div id="cards">
+            <table id="cardOptions">
+                <tr>
+                    <td>
+                        <input type="checkbox" id="raresOnly" name="raresOnly" value="raresOnly" onclick="loadCards()">
+                        <label for="raresOnly">Show Rare Cards Only</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="currency" name="currency" value="currency" onclick="loadCards()">
+                        <label for="currency">Show Prices in EUR</label>
+                    </td>
+                </tr>
+            </table>
+            <table id="myCards" border="1" width="75%">
+
+            </table>
+        </div>
+        
+        <script>
+            Vue.component('blog-post', {
+                props: ['blogpost'],
+                template: `<div id="singleBlogPost">
+                <h2>{{ blogpost.title }}</h2>
+                <h3>{{ blogpost.username }}</h3>
+                <h4>{{ blogpost.date }}</h4>
+                <p>{{ blogpost.content }}</p>
+            </div>`,
+            })
+
+            var blogVue = new Vue({
+                el: '#blogPosts',
+                data: {
+                    posts: [
+                    {title: 'First Post', username: 'Jason', date: 'July 8, 2024', content: 'This is the content of my first post.'},
+                    {title: 'Second Post', username: 'Jason', date: 'July 9, 2024', content: 'This is the content of my second post.'},
+                    ]
+                }
+            })
+
+            var postBlogVue = new Vue ({
+                el: '#blogPostCreation',
+                data: {
+                    title: '',
+                    username: '',
+                    date: '',
+                    content: ''
+                },
+                methods: {
+                    publishPost: function() {
+                        var postData = {
+                            title: this.title,
+                            username: this.username,
+                            date: this.date,
+                            content: this.content
+                        }
+                        blogVue.posts.push(postData)
+                        this.title = ''
+                        this.username = ''
+                        this.date = ''
+                        this.content = ''
+                    }
+                }
+            })
+        </script>
+        
+    </body>
+</html>
